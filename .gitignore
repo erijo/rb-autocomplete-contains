@@ -1,0 +1,5 @@
+*~
+*.pyc
+rb_autocomplete_contains.egg-info/
+build/
+dist/
