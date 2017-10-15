@@ -1,0 +1,6 @@
+Making a release
+----------------
+
+1. Tag the release.
+1. Upload new version to Python Package Index:
+   python setup.py bdist_wheel bdist_egg sdist upload
