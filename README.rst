@@ -1,6 +1,9 @@
 AutoComplete Contains
 =====================
 
+.. image:: https://badge.fury.io/py/rb-autocomplete-contains.png
+    :target: https://pypi.python.org/pypi/rb-autocomplete-contains/
+
 rb-autocomplete-contains is an `extension
 <https://www.reviewboard.org/docs/manual/3.0/extending/>`_ for `Review
 Board <https://www.reviewboard.org/>`_ 3.0+ that enhances the auto
