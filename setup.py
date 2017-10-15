@@ -2,17 +2,21 @@ from __future__ import unicode_literals
 
 from datetime import date
 from reviewboard.extensions.packaging import setup
-from subprocess import check_output
+from subprocess import check_output, CalledProcessError
 
 GIT_REV_CMD = "git rev-parse --short HEAD".split()
 GIT_TIMESTAMP_CMD = "git show -s --format=%ct HEAD".split()
-
-rev = check_output(GIT_REV_CMD).decode('utf-8').strip()
-timestamp = check_output(GIT_TIMESTAMP_CMD).decode('utf-8').strip()
+GIT_DESCRIBE_CMD = "git describe --exact-match --tags HEAD".split()
 
 PACKAGE = "rb-autocomplete-contains"
-VERSION = "{0:%Y}.{0:%m}.{0:%d}+{1}".format(
-    date.fromtimestamp(float(timestamp)), rev)
+
+try:
+    VERSION = check_output(GIT_DESCRIBE_CMD).decode('utf-8').strip()
+except CalledProcessError:
+    rev = check_output(GIT_REV_CMD).decode('utf-8').strip()
+    timestamp = check_output(GIT_TIMESTAMP_CMD).decode('utf-8').strip()
+    VERSION = "{0:%Y}.{0:%m}.{0:%d}+{1}".format(
+        date.fromtimestamp(float(timestamp)), rev)
 
 setup(
     name=PACKAGE,
