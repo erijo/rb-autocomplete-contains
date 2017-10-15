@@ -13,6 +13,8 @@ Instead of just suggesting groups that begin with the text entered, it
 will list all groups that contain the entered text. This is specially
 useful when you have many groups that share a common prefix.
 
+.. image:: https://raw.githubusercontent.com/erijo/rb-autocomplete-contains/master/screenshot.png
+
 Installation
 ------------
 
