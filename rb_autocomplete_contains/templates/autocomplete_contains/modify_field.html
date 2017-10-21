@@ -7,7 +7,7 @@
  });
  RB.PageManager.ready(function(page) {
      var view = page.reviewRequestEditorView._fieldViews['target_groups'];
-     var ac = view.$el.inlineEditor('field').data('rbautocomplete');
+     var ac = view.inlineEditorView.$field.data('rbautocomplete');
      ac.options.matchContains = true;
  });
 </script>
