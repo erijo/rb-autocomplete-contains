@@ -15,7 +15,7 @@ try:
 except CalledProcessError:
     rev = check_output(GIT_REV_CMD).decode('utf-8').strip()
     timestamp = check_output(GIT_TIMESTAMP_CMD).decode('utf-8').strip()
-    VERSION = "{0:%Y}.{0:%m}.{0:%d}+{1}".format(
+    VERSION = "{0.year}.{0.month}.{0.day}+{1}".format(
         date.fromtimestamp(float(timestamp)), rev)
 
 setup(
