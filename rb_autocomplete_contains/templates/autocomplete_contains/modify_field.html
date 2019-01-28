@@ -8,6 +8,10 @@
  RB.PageManager.ready(function(page) {
      var view = page.reviewRequestEditorView.getFieldView('target_groups');
      var ac = view.inlineEditorView.$field.data('rbautocomplete');
+     if (!ac) {
+         // RB 4.x
+         ac = view.inlineEditorView.$field.data('uiRbautocomplete');
+     }
      ac.options.matchContains = true;
  });
 </script>
