@@ -12,7 +12,7 @@ class AutocompleteContainsReviewGroupResource(ReviewGroupResource):
         # Create mutable QueryDict and pop the 'q' parameter
         request.GET = request.GET.copy()
         try:
-            search_q = request.GET.pop('q')[0]
+            search_q = request.GET.pop('q')[-1]
         except:
             search_q = None
 
