@@ -1,5 +1,3 @@
-from __future__ import unicode_literals
-
 from datetime import date
 from reviewboard.extensions.packaging import setup
 from subprocess import check_output, CalledProcessError
@@ -33,7 +31,7 @@ setup(
         % PACKAGE,
     },
     package_data={
-        b'rb_autocomplete_contains': [
+        'rb_autocomplete_contains': [
             'templates/autocomplete_contains/*.html',
         ],
     },
